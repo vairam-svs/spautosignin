@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Key", "Key", "{AFD65F9F-D093-4124-8865-83E21DD3434F}"
+	ProjectSection(SolutionItems) = preProject
+		OrbitOne.SharePoint.Claims.SignIn\OrbitOne.SharePoint.snk = OrbitOne.SharePoint.Claims.SignIn\OrbitOne.SharePoint.snk
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbitOne.SharePoint.Claims.SignIn", "OrbitOne.SharePoint.Claims.SignIn\OrbitOne.SharePoint.Claims.SignIn.csproj", "{67570694-8303-4B14-A413-C77E89A3DC9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LukeSkywalker.IPNetwork", "LukeSkywalker.IPNetwork\LukeSkywalker.IPNetwork.csproj", "{E76938D8-EDEC-4568-B73C-B98C41044423}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.dis.wa.gov:8080/tfs/cts%20projects
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OrbitOne.SharePoint.Claims.SignIn\\OrbitOne.SharePoint.Claims.SignIn.csproj
+		SccProjectName1 = OrbitOne.SharePoint.Claims.SignIn
+		SccLocalPath1 = OrbitOne.SharePoint.Claims.SignIn
+		SccProjectUniqueName2 = LukeSkywalker.IPNetwork\\LukeSkywalker.IPNetwork.csproj
+		SccProjectName2 = LukeSkywalker.IPNetwork
+		SccLocalPath2 = LukeSkywalker.IPNetwork
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67570694-8303-4B14-A413-C77E89A3DC9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67570694-8303-4B14-A413-C77E89A3DC9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67570694-8303-4B14-A413-C77E89A3DC9C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{67570694-8303-4B14-A413-C77E89A3DC9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67570694-8303-4B14-A413-C77E89A3DC9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67570694-8303-4B14-A413-C77E89A3DC9C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E76938D8-EDEC-4568-B73C-B98C41044423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E76938D8-EDEC-4568-B73C-B98C41044423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E76938D8-EDEC-4568-B73C-B98C41044423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E76938D8-EDEC-4568-B73C-B98C41044423}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

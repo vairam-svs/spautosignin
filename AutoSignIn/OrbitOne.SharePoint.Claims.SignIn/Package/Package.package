@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="75418cbb-a824-4230-859f-8fcbd0fc77ac" solutionId="75418cbb-a824-4230-859f-8fcbd0fc77ac" resetWebServer="false" sharePointProductVersion="15.0" name="OrbitOne.SharePoint.Claims.SignIn" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="LukeSkywalker.IPNetwork.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\LukeSkywalker.IPNetwork\LukeSkywalker.IPNetwork.csproj">
+    </projectOutputAssembly>
+  </assemblies>
+  <projectItems>
+    <projectItemReference itemId="640af85c-85e9-4fbe-bd6a-ed5b4985aeb1" />
+    <projectItemReference itemId="8c18eac8-0397-442d-bf71-5eed39f711a8" />
+  </projectItems>
+</package>
