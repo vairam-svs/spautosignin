@@ -26,33 +26,42 @@ namespace OrbitOne.SharePoint.Claims.SignIn
                 SPWebApplication app = SPContext.Current.Site.WebApplication;
 
                 SignInConfiguration config = app.GetChild<SignInConfiguration>("SignInConfig");
+                if (config == null)
+                    throw new NullReferenceException("Config was not found");
 
                 SPAlternateUrl u = app.AlternateUrls[Request.Url];
+                if (u == null)
+                    throw new NullReferenceException("Could not find " + Request.Url + " in alternate URLs");
                 SPUrlZone zone = u.UrlZone;
 
                 string components = Request.Url.GetComponents(UriComponents.Query, UriFormat.SafeUnescaped);
 
+                if (!app.IisSettings.ContainsKey(zone))
+                    zone = SPUrlZone.Default;
+                    //throw new KeyNotFoundException("IIS settings did not have zone " + zone);
                 SPIisSettings settings = app.IisSettings[zone];
                 bool isMappingFound = false;
 
                 IPAddress ipv4 = IpNetworking.GetIP4Address();
-                string ip = ipv4.ToString();
-                string providerMappingKey = ip;
+                string targetProvider;
                 try
                 {
-                    KeyValuePair<string, string> providerMapping = config.ProviderMappings.Where(x => IPNetwork.Contains(IPNetwork.Parse(x.Key), ipv4)).FirstOrDefault();
-                    providerMappingKey = providerMapping.Key;
-                    isMappingFound = !string.IsNullOrEmpty(providerMappingKey);
+                    KeyValuePair<IPNetwork, string> providerMapping = config.ProviderMappings
+                        .Select(kvp => new KeyValuePair<IPNetwork, string>(IPNetwork.Parse(kvp.Key), kvp.Value))
+                        .Where(x => IPNetwork.Contains(x.Key, ipv4))
+                        .OrderBy(x => x.Key.Cidr)
+                        .Last();
+                    isMappingFound = true;
+                    targetProvider = providerMapping.Value;
                 }
                 catch
                 {
                     isMappingFound = false;
+                    targetProvider = null;
                 }
                 var signinPageMappings = config.SingInPageMappings;
-                if (config != null && isMappingFound && isMappingFound)
+                if (config != null && isMappingFound)
                 {
-                    string targetProvider = config.ProviderMappings[providerMappingKey];
-
                     foreach (SPAuthenticationProvider provider in settings.ClaimsAuthenticationProviders)
                     {
                         if (string.Compare(provider.DisplayName, targetProvider, true, System.Globalization.CultureInfo.CurrentUICulture) == 0
